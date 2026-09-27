@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: interview
+
+  # Enable the H2 Console interface in your browser
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # Database Connection Settings (Indented under spring)
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  # JPA/Hibernate Configurations (Indented under spring)
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+fraud:
+  max-attempts: 3
+  retry-window-minutes: 10
+  auto-block: true
